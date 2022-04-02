@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Random colour generator</title>
+  </head>
+  <body>
+ <h1 >Random colour Generator</h1>
+   <h2 id="heading">generate your random colour</h2>
+  <button  id="btn" style="font-size:20px; "><center>Generate</button>
+    <script >
+   const btn=document.getElementById('btn');
+
+   const heading=document.getElementById('heading');
+
+   function randomcolor(){
+    let r=Math.floor(Math.random()*256) ;
+      let g=Math.floor(Math.random()*256) ;
+        let b=Math.floor(Math.random()*256) ;
+        let newcolor=`rgb(${r} ${g} ${b})`;
+        return newcolor;
+   }
+    btn.addEventListener('click', function(){
+      console.log('click');
+      let newcolor=randomcolor();
+    document.body.style.backgroundColor=newcolor;
+      heading.innerText=newcolor;
+    });
+    </script>
+  </body>
+</html>
